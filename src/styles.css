@@ -6,3 +6,67 @@
   border: 2px solid #000;
   font-size: 2em;
 }
+
+.serachBoxField {
+  display: flex;
+  flex-flow: column-reverse;
+  margin-bottom: 1em;
+}
+
+.searchInputBoxLabel, .searchInputBox {
+  transition: all 0.2s;
+  touch-action: manipulation;
+}
+
+.searchInputBox{
+  font-size: 1.5em;
+  border: 0;
+  border-bottom: 1px solid #ccc;
+  font-family: inherit;
+  border-radius: 0;
+  padding: 0;
+  cursor: text;
+}
+
+.searchInputBox:focus {
+  outline: 0;
+  border-bottom: 2px solid #2196F3;
+}
+
+.searchInputBoxLabel {
+  text-transform: none;
+  letter-spacing: 0.05em;
+  margin-bottom: 5px;
+}
+
+.searchInputBox:placeholder-shown + .searchInputBoxLabel {
+  cursor: text;
+  max-width: 66.66%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  transform-origin: left bottom;
+  transform: translate(0, 2.125rem) scale(1.5);
+}
+
+.searchInputBox::-webkit-input-placeholder {
+  opacity: 0;
+  transition: inherit;
+}
+
+.searchInputBox:focus::-webkit-input-placeholder {
+  opacity: 1;
+}
+.searchInputBoxLabel{
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transition: 0.2s;
+}
+
+.searchInputBox:not(:placeholder-shown) + .searchInputBoxLabel,
+.searchInputBox:focus + .searchInputBoxLabel {
+  transform: translate(0, 0) scale(1);
+  cursor: pointer;
+}
